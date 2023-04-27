@@ -1,0 +1,4 @@
+.custom > h2{
+    background-color: var(--custom-background-color);
+    color: var(--custom-text-color);
+}

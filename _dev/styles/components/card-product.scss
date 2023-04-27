@@ -1,0 +1,147 @@
+.product-miniature {
+    &:hover {
+        @include media-breakpoint-up(xl) {
+            .card__quick-add {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .card__media {
+        &.card__media_secondary {
+            @include media-breakpoint-up(xl) {
+                &:hover {
+                    img {
+                        &:first-child:not(:only-child) {
+                            opacity: 0;
+                        }
+
+                        + img {
+                            opacity: 1;
+                        }
+                    }
+                }
+                + .card__content {
+                    position: absolute !important;
+                    z-index: 2;
+                }
+            }
+
+            img {
+                transition: transform var(--duration-long) ease;
+                transform: scale(1.03);
+
+                + img {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .card__content {
+        display: flex;
+        flex-direction: column;
+        .card__information {
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 1.7rem;
+            }
+        }
+
+        .card__heading {
+            font-size: $font-size-base;
+            font-weight: $weight-medium;
+            line-height: 23px;
+            margin-bottom: 6px;
+            @include media-breakpoint-down(sm) {
+                font-size: $font-size-small;
+                line-height: 20px;
+            }
+        }
+
+        .vendor {
+            font-size: $font-size-extra-small;
+            font-weight: $weight-light;
+            line-height: 17px;
+            margin-bottom: 8px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 6px;
+            }
+        }
+
+        .price {
+            .price-item {
+                font-size: $font-size-small;
+                font-weight: $weight-light;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .card__variants {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        padding-top: 1.7rem;
+
+        .variant {
+            height: 34px;
+
+            &:not(.color) {
+                width: 34px;
+            }
+
+            &.not-available {
+                opacity: .5;
+            }
+
+            &.swatch {
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                font-size: 0;
+            }
+
+            &.text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $border-color;
+                font-size: $font-size-small;
+                padding: 5px;
+                line-height: 34px;
+                text-transform: uppercase;
+            }
+        }
+
+        .no-variant {
+            height: 34px;
+
+            &.text {
+                line-height: 34px;
+            }
+
+            &.swatch {
+                width: 34px;
+                display: block;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .card__quick-add {
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--duration-long) ease;
+        @include media-breakpoint-down(xl) {
+            display: none;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
