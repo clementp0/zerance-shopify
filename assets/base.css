@@ -244,7 +244,6 @@ html.no-js .no-js-hidden {
 }
 
 .page-width {
-  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -256,6 +255,9 @@ html.no-js .no-js-hidden {
 .page-width-desktop {
   padding: 0;
   margin: 0 auto;
+}
+.header {
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 750px) {
@@ -292,10 +294,6 @@ html.no-js .no-js-hidden {
     padding: 0;
   }
 
-  .page-width-desktop {
-    max-width: var(--page-width);
-    padding: 0 5rem;
-  }
 }
 
 .isolate {
@@ -710,6 +708,7 @@ hr {
   text-decoration: none;
   color: currentColor;
   display: block;
+  text-transform: uppercase;
 }
 
 .placeholder {
@@ -903,6 +902,7 @@ summary::-webkit-details-marker {
 .focus-none {
   box-shadow: none !important;
   outline: 0 !important;
+  padding: 0 1rem;
 }
 
 .focus-offset:focus-visible {
@@ -1358,11 +1358,12 @@ button.shopify-payment-button__button--unbranded {
   font: inherit;
   font-size: 1.5rem;
   text-decoration: none;
-  color: rgb(var(--color-button-text));
+  color: black;
   transition: box-shadow var(--duration-short) ease;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
+  background-color: white;
+  text-transform: uppercase;
 }
 
 .button:before,

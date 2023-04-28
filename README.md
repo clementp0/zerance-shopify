@@ -5,14 +5,17 @@ Bienvenue sur le dépôt des utilitaires du ZaxThème. Celui-ci est indispensabl
 
 ### Installation ###
 
-- Copier le contenu de ce dépôt (sans les fichiers qui lui sont propres comme le .gitignore, dossier git, etc...)
+- Copier/coller le contenu de ce dépôt dans celui de votre projet (sans les fichiers qui lui sont propres : .gitignore, README.md, dossier git.)
 - Mettre à jour l'url du store dans le package.json (store_name)
-- Ajouter ce contenu à la racine de votre nouveau projet et commiter les changements avec le message suivant : "[+] AxUtilities"
+- Commiter les changements avec le message suivant : "[+] AxUtilities"
+- Lancer la commande "npm i"
 - Puller le thème à l'aide de la commande "npm run pull"
 - Comparer les fichiers suivants en gardant bien les modifications du dépôt AxUtilities : 
     ```
-    - layout/theme.liquid
     - config/setting_schema.json
+    - layout/theme.liquid
+    - snippets/script-bundle.liquid
+    - snippets/style-bundle.liquid
     ```
 - Commiter les changements avec le message suivant : "[+] Theme Init"
 
@@ -23,3 +26,16 @@ Bienvenue sur le dépôt des utilitaires du ZaxThème. Celui-ci est indispensabl
 * ```npm run pull``` (shopify theme pull)
 * ```npm run push``` (shopify theme push)
 * ```npm run serve``` (shopify theme dev)
+
+***
+
+### Spécificités ###
+
+#### package.json
+
+Les variables de ce fichier s'utilisent différemment en fonction du système d'exploitation.
+
+* Linux/Mac: ```$npm_package_name``` ou ```${npm_package_name}```
+
+* Windows: ```%npm_package_name%```
+
